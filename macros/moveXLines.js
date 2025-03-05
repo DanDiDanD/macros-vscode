@@ -7,6 +7,14 @@ const moveXLines = async () => {
     return;
   }
 
+  const config = vscode.workspace.getConfiguration("editor");
+  const lineNumbersSetting = config.get("lineNumbers");
+
+  if (lineNumbersSetting === "on") {
+    await vscode.commands.executeCommand("workbench.action.gotoLine");
+    return;
+  }
+
   const input = await vscode.window.showInputBox({
     prompt: "Enter the number of lines to move (e.g., 10 or -10)",
   });
