@@ -1,4 +1,5 @@
 const moveXLines = require("./macros/moveXLines");
+const toggleLineNumbers = require("./macros/toggleLineNumbers");
 
 /**
  * Macro configuration settings
@@ -13,5 +14,9 @@ module.exports.macroCommands = {
   moveXLines: {
     no: 1,
     func: moveXLines,
+  },
+  toggleLineNumbers: {
+    no: 2,
+    func: toggleLineNumbers,
   },
 };
